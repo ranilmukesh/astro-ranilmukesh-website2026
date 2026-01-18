@@ -1,0 +1,50 @@
+---
+const currentYear = new Date().getFullYear();
+---
+<footer class="container section">
+  <div class="footer-content">
+    <div class="links">
+      <a href="mailto:ranilmukesh117@gmail.com" target="_blank">Email</a>
+      <a href="https://linkedin.com/in/ranilmukesh" target="_blank">LinkedIn</a>
+      <a href="https://github.com/ranilmukesh" target="_blank">GitHub</a>
+      <a href="https://phobosq.com" target="_blank">PhobosQ</a>
+    </div>
+    <p class="copyright">&copy; {currentYear} Ranil Mukesh. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    border-top: 1px solid var(--border);
+    margin-top: auto;
+    padding-bottom: var(--space-md);
+  }
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    align-items: flex-start;
+  }
+
+  .links {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+
+  .links a {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  .links a:hover {
+    color: var(--text);
+  }
+
+  .copyright {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 0;
+  }
+</style>

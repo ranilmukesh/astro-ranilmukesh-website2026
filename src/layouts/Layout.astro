@@ -1,0 +1,72 @@
+---
+const { title = "Ranil Mukesh | Architecting Autonomous Intelligence" } = Astro.props;
+import '../styles/global.css';
+import { ViewTransitions } from 'astro:transitions';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content="Ranil Mukesh - Co-Founder & CTO | PhobosQ & k22.ai. Architecting the infrastructure for autonomous enterprise intelligence." />
+    <title>{title}</title>
+    <ViewTransitions />
+    
+    <!-- Theme Script - runs BEFORE page renders to prevent flash -->
+    <script is:inline>
+      // This runs on every page load/navigation
+      (function() {
+        try {
+          var stored = localStorage.getItem('theme');
+          var theme = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch(e) {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    
+    <!-- Theme persistence script for ViewTransitions -->
+    <script>
+      // Apply theme on initial load and after each navigation
+      function applyStoredTheme() {
+        const stored = localStorage.getItem('theme');
+        if (stored) {
+          document.documentElement.setAttribute('data-theme', stored);
+        }
+      }
+      
+      // Run on Astro's before-swap to preserve theme during transition
+      document.addEventListener('astro:before-swap', (e) => {
+        const theme = document.documentElement.getAttribute('data-theme');
+        e.newDocument.documentElement.setAttribute('data-theme', theme || 'light');
+      });
+      
+      // Apply theme after page loads
+      document.addEventListener('astro:page-load', applyStoredTheme);
+    </script>
+  </body>
+</html>
+
+<style>
+  body {
+    padding-top: 70px; /* Space for fixed header */
+  }
+  
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+</style>

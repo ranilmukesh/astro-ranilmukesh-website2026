@@ -1,0 +1,80 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<Layout title="Articles | Ranil Mukesh">
+  <section class="container section">
+    <h1>Articles</h1>
+    <p class="intro-text">Thoughts on Agentic Systems, AI Architecture, and the future of work.</p>
+    
+    <div class="posts-list">
+      {posts.map((post) => (
+        <a href={`/blog/${post.slug}/`} class="post-item fade-in">
+          <article>
+            <div class="meta">
+              <time datetime={post.data.pubDate.toISOString()}>
+                {post.data.pubDate.toLocaleDateString('en-us', {
+                  year: 'numeric',
+                  month: 'short',
+                  day: 'numeric',
+                })}
+              </time>
+            </div>
+            <h2>{post.data.title}</h2>
+            <p>{post.data.description}</p>
+          </article>
+        </a>
+      ))}
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .intro-text {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-xl);
+  }
+
+  .posts-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .post-item {
+    display: block;
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--border);
+    transition: opacity 0.2s ease;
+  }
+  
+  .post-item:hover {
+    opacity: 0.7;
+    border-color: var(--text);
+  }
+
+  .post-item h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .post-item p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .meta {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+  }
+</style>

@@ -1,0 +1,81 @@
+# Implementation Plan: High-Performance Astro Portfolio
+
+## Goal
+Build a "supreme fast", elegant, and classy personal portfolio website for Ranil Mukesh using Astro.js. The design will follow a strict **pure black and white** aesthetic with neutral grays for depth, featuring ultra-smooth transitions and a mobile-responsive, spacious layout.
+
+## User Review Required
+> [!IMPORTANT]
+> **Aesthetic Specs**: Pure black (#000000) and white (#FFFFFF) with neutral grays (#F5F5F5, #1A1A1A) for subtle depth.
+>
+> **Top-Right Toggle**: The light/dark mode toggle will be fixed in the top-right corner for consistent access across all scroll positions.
+>
+> **Ultra-Smooth Transitions**: I will leverage Astro's `<ViewTransitions />` API combined with fine-tuned CSS cubic-bezier transitions for a premium, non-jarring feel.
+
+## Proposed Changes
+
+### Architecture & Design System
+- **Framework**: Astro.js (Latest)
+- **Styling**: Scoped Vanilla CSS + CSS Variables.
+- **Color Palette**: 
+  - Light: Primary White (#FFFFFF), Secondary Gray (#F5F5F5), Text Black (#000000).
+  - Dark: Primary Black (#000000), Secondary Gray (#1A1A1A), Text White (#FFFFFF).
+- **Layout**: Spacious with generous whitespace (80px+ section padding, clear readable line-height).
+- **Transitions**: Global fade and slide animations using `view-transition-name` where applicable.
+
+### file structure
+#### [NEW] [astro.config.mjs](file:///d:/ranil website/astro.config.mjs)
+- Configure standard Astro settings.
+
+#### [NEW] [src/layouts/Layout.astro](file:///d:/ranil website/src/layouts/Layout.astro)
+- Main HTML shell.
+- `<ViewTransitions />` for SPA-like navigation.
+- Global Styles (`global.css` import).
+- Theme toggle script (inline in `<head>` to prevent FOUC).
+
+#### [NEW] [src/styles/global.css](file:///d:/ranil website/src/styles/global.css)
+- CSS Variables for colors (`--bg`, `--bg-secondary`, `--text`, `--border`).
+- Transition definitions: `transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1)`.
+- Global spacing and typography.
+
+#### [NEW] [src/components/Header.astro](file:///d:/ranil website/src/components/Header.astro)
+- Navigation links (Home, Profile, Blog, Contact).
+- Minimalist logo/name.
+
+#### [NEW] [src/components/ThemeToggle.astro](file:///d:/ranil website/src/components/ThemeToggle.astro)
+- **Position**: `position: fixed; top: 20px; right: 20px; z-index: 100`.
+- **Aesthetic**: Minimalist icon/switch.
+
+#### [NEW] [src/components/Footer.astro](file:///d:/ranil website/src/components/Footer.astro)
+- Social links (LinkedIn, GitHub).
+- Copyright.
+
+#### [NEW] [src/components/ThemeToggle.astro](file:///d:/ranil website/src/components/ThemeToggle.astro)
+- Interactive toggle button.
+- SVG icons for Sun/Moon.
+
+#### [NEW] [src/pages/index.astro](file:///d:/ranil website/src/pages/index.astro)
+- **Hero Section**: Large typography, short bio ("The future of enterprise is not just about data analysis; it is about autonomous execution.").
+- **Selected Works**: Brief highlights.
+
+#### [NEW] [src/pages/about.astro](file:///d:/ranil website/src/pages/about.astro)
+- Detailed executive profile (from your provided text).
+- Experience, Philosophy, Tech Stack.
+
+#### [NEW] [src/pages/blog/index.astro](file:///d:/ranil website/src/pages/blog/index.astro)
+- List of blog posts.
+- Clean typography-focused layout.
+
+#### [NEW] [src/content/config.ts](file:///d:/ranil website/src/content/config.ts)
+- Define `blog` collection schema.
+
+## Verification Plan
+
+### Automated Tests
+- Run `npm run build` to verify the site builds successfully without errors.
+- Run `npm run dev` to launch the development server.
+
+### Manual Verification
+1. **Theme Toggle**: Switch between dark and light mode. Verify no "flash" of wrong color on reload.
+2. **Responsiveness**: Check layout on mobile and desktop widths.
+3. **Navigation**: Click all links to ensure View Transitions are smooth.
+4. **Performance**: Inspect Network tab to ensure minimal JS is loaded (only for toggle and view transitions).

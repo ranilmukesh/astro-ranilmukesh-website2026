@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact | Ranil Mukesh">
+  <section class="container section fade-in">
+    <div class="contact-wrapper">
+      <h1>Get in Touch</h1>
+      <p class="subtitle">
+        I am always open to discussing high-level agentic architecture, Model Control Protocols (MCP), or the integration of RLAIF in enterprise systems.
+      </p>
+      
+      <div class="contact-methods">
+        <a href="mailto:ranilmukesh117@gmail.com" class="method">
+          <span class="label">Email</span>
+          <span class="value">ranilmukesh117@gmail.com</span>
+        </a>
+        
+        <a href="https://linkedin.com/in/ranilmukesh" target="_blank" class="method">
+          <span class="label">LinkedIn</span>
+          <span class="value">in/ranilmukesh</span>
+        </a>
+        
+        <a href="https://github.com/ranilmukesh" target="_blank" class="method">
+          <span class="label">GitHub</span>
+          <span class="value">github.com/ranilmukesh</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .contact-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .subtitle {
+    font-size: 1.25rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-xl);
+  }
+
+  .contact-methods {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .method {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md);
+    border: 1px solid var(--border);
+    transition: all 0.2s ease;
+  }
+
+  .method:hover {
+    border-color: var(--text);
+    transform: translateY(-2px);
+  }
+
+  .label {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+  }
+
+  .value {
+    color: var(--text-muted);
+  }
+</style>
