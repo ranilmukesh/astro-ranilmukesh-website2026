@@ -1,0 +1,176 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Technical Expertise & Core Capabilities | Ranil Mukesh">
+  <section class="container section">
+    <div class="section-header">
+      <h1>Technical Expertise & Core Capabilities</h1>
+      <p class="text-muted">Verified technical stack and architectural capabilities in Agentic AI and Machine Learning.</p>
+    </div>
+
+    <div class="expertise-grid">
+      <!-- 1. AI Agents & Agentic Systems Architecture -->
+      <div class="expertise-card">
+        <div class="card-header">
+          <span class="index">01</span>
+          <h3>AI Agents & Agentic Systems Architecture</h3>
+        </div>
+        <p class="card-desc">Designing reliable orchestration and coordination layers for autonomous intelligence.</p>
+        <ul>
+          <li>Agent design, orchestration, and coordination</li>
+          <li>Multi-agent communication and decision-making frameworks</li>
+          <li>Tool integration and autonomous action execution</li>
+          <li>Human-in-the-loop agent systems</li>
+        </ul>
+      </div>
+
+      <!-- 2. Large Language Model Engineering -->
+      <div class="expertise-card">
+        <div class="card-header">
+          <span class="index">02</span>
+          <h3>Large Language Model Engineering</h3>
+        </div>
+        <p class="card-desc">Moving beyond prompts into deep model optimization and production-ready alignment.</p>
+        <ul>
+          <li>Domain-specific fine-tuning for production systems</li>
+          <li>RLAIF (Reinforcement Learning from AI Feedback) for safety and alignment</li>
+          <li>Adversarial red-teaming for robustness validation</li>
+          <li>Multi-modal LLM architectures (text, voice, image integration)</li>
+          <li>Localization and cultural adaptation (Yazhi Tamil case study)</li>
+        </ul>
+      </div>
+
+      <!-- 3. Production ML & MLOps -->
+      <div class="expertise-card">
+        <div class="card-header">
+          <span class="index">03</span>
+          <h3>Production ML & MLOps</h3>
+        </div>
+        <p class="card-desc">Architecting the infrastructure required to scale AI from research to enterprise deployment.</p>
+        <ul>
+          <li>End-to-end ML pipeline design and optimization</li>
+          <li>Data engineering for model training and evaluation</li>
+          <li>Bias detection, mitigation, and fairness metrics</li>
+          <li>Deployment, monitoring, and continuous improvement</li>
+          <li>Enterprise-grade compliance and security</li>
+        </ul>
+      </div>
+
+      <!-- 4. Data Science & Analytics Automation -->
+      <div class="expertise-card">
+        <div class="card-header">
+          <span class="index">04</span>
+          <h3>Data Science & Analytics Automation</h3>
+        </div>
+        <p class="card-desc">Decoupling insights from human bottlenecks through automated reasoning. (Referenced in SIRUS architecture)</p>
+        <ul>
+          <li>Automated ML model building and selection</li>
+          <li>Database querying and natural language interfaces (Text2SQL)</li>
+          <li>Insight generation and automated business intelligence</li>
+        </ul>
+      </div>
+
+      <!-- 5. Localization & Multi-Market Deployment -->
+      <div class="expertise-card">
+        <div class="card-header">
+          <span class="index">05</span>
+          <h3>Localization & Multi-Market Deployment</h3>
+        </div>
+        <p class="card-desc">Adapting intelligence systems for cultural and linguistic nuances across global markets.</p>
+        <ul>
+          <li>Cultural and linguistic adaptation of AI systems</li>
+          <li>Market-specific optimization for specialized demographics</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .expertise-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    .expertise-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .expertise-card:nth-child(5) {
+      grid-column: span 2;
+    }
+  }
+
+  .expertise-card {
+    padding: 2.5rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(0,0,0,0.01) 0%, transparent 100%);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+
+  .expertise-card:hover {
+    border-color: var(--text);
+    transform: translateY(-4px);
+  }
+
+  :global([data-theme="dark"]) .expertise-card {
+    background: linear-gradient(135deg, rgba(255,255,255,0.01) 0%, transparent 100%);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .index {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    font-family: monospace;
+    padding-top: 0.4rem;
+  }
+
+  .expertise-card h3 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.3;
+    max-width: 20ch;
+  }
+
+  .card-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+
+  .expertise-card ul {
+    list-style: none;
+    padding: 0;
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+  }
+
+  .expertise-card li {
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: flex-start;
+    line-height: 1.4;
+  }
+
+  .expertise-card li::before {
+    content: "→";
+    margin-right: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 700;
+  }
+</style>
