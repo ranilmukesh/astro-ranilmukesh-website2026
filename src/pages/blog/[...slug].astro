@@ -36,7 +36,7 @@ const { Content } = await post.render();
     </div>
     
     <div class="back-link">
-      <a href="/blog">&larr; Back to Articles</a>
+      <a href={`${import.meta.env.BASE_URL}blog`}>&larr; Back to Articles</a>
     </div>
   </article>
 </Layout>
