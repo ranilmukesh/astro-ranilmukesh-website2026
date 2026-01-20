@@ -12,6 +12,11 @@ import Layout from '../layouts/Layout.astro';
       Co-Founder & CTO | PhobosQ & k22.ai
     </p>
 
+    <!-- Credentials - High Signal -->
+    <p class="hero-credentials" style="margin-top: -1.5rem; margin-bottom: 3rem; color: var(--text-muted); font-size: 1rem;">
+      Previously: NVIDIA • DeepMind
+    </p>
+
     <!-- Social Links Row -->
     <div class="social-links">
       <a href="mailto:ranilmukesh117@gmail.com" aria-label="Email">
@@ -80,13 +85,14 @@ import Layout from '../layouts/Layout.astro';
       </a>
 
       <!-- Yazhi -->
-      <div class="project-item">
+      <a href="https://phobosq.com/yazhi" target="_blank" class="project-item">
         <div class="project-header">
           <h3>Yazhi</h3>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
         </div>
-        <p>A foundational model fine-tuned for high-reasoning capabilities, specifically localized for the 90 million Tamil speakers globally.</p>
-        <span class="seo-keywords">Tamil LLM, Foundational Model, High-reasoning AI, Language Model, Regional AI</span>
-      </div>
+        <p>The first foundational AI platform designed for 90 million Tamil speakers. Bridging advanced RL-based thinking (CoT, Parallel Tree) to truly democratize access to intelligence for farmers.</p>
+        <span class="seo-keywords">Tamil LLM, Foundational Model, High-reasoning AI, Language Model, Regional AI, RL, Chain of Thought</span>
+      </a>
 
       <!-- PhobosQ AutoSEO -->
       <div class="project-item">
@@ -94,17 +100,28 @@ import Layout from '../layouts/Layout.astro';
           <h3>PhobosQ AutoSEO (QEO)</h3>
         </div>
         <p>An autonomous agent leveraging 'Computer Use' capabilities to navigate web interfaces, analyze competitive metrics, and execute SEO strategies without human intervention.</p>
-        <span class="seo-keywords">AutoSEO, Computer Use, Autonomous Agent, SEO Automation, Web Automation</span>
+        <span class="seo-keywords">AutoSEO, Computer Use, Autonomous Agent, SEO Automation, Web Automation, Enterprise SEO</span>
       </div>
 
-      <!-- Luna & TOM -->
-      <div class="project-item">
+      <!-- Luna -->
+      <a href="https://phobosq.com/luna" target="_blank" class="project-item">
         <div class="project-header">
-          <h3>Luna & TOM</h3>
+          <h3>Luna</h3>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
         </div>
-        <p>Specialized agents for document intelligence (Indo-Aryan languages) and advanced call analytics that actually understand context.</p>
-        <span class="seo-keywords">Document Intelligence, Call Analytics, Indo-Aryan Languages, NLP, Voice AI</span>
-      </div>
+        <p>Enterprise document processing for Indian languages. Extracts entities, tables, and insights from complex documents with high accuracy.</p>
+        <span class="seo-keywords">Document Intelligence, OCR, Indian Languages, NLP, PhobosQ</span>
+      </a>
+
+      <!-- TOM -->
+      <a href="https://phobosq.com/call-analytics" target="_blank" class="project-item">
+        <div class="project-header">
+          <h3>TOM: Advanced Call Analytics</h3>
+          <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+        </div>
+        <p>Transforms Tamil and Indic language calls into actionable insights with 95% accuracy. Features real-time sentiment analysis, sales opportunity detection, and coaching to boost conversion by 35%.</p>
+        <span class="seo-keywords">Call Analytics, Indo-Aryan Languages, Voice AI, Sentiment Analysis, Sales Optimization</span>
+      </a>
 
       <!-- LlamaFirewall -->
       <div class="project-item">
@@ -251,7 +268,7 @@ import Layout from '../layouts/Layout.astro';
   <section class="container section small-padding">
     <div class="section-header" style="display: flex; justify-content: space-between; align-items: center;">
       <h2>Technical Expertise</h2>
-      <a href={`${import.meta.env.BASE_URL}/expertise`} class="link-badge">View Full Stack</a>
+      <a href={`${import.meta.env.BASE_URL.replace(/\/$/, '')}/expertise`} class="link-badge">View Full Stack</a>
     </div>
     <div class="grid-2-col">
       <div class="expertise-col">
@@ -293,23 +310,87 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- What's Next -->
+  <!-- What I'm Building -->
   <section class="container section small-padding">
     <div class="section-header">
-      <h2>What's Next</h2>
+      <h2>What I'm Building</h2>
     </div>
     <div class="section-content">
-      <p class="text-justify">
-        Currently obsessed with building Voice Agents that integrate with CRMs
-        and actually know what they're doing, and prototyping an AI platform
-        for FAANG-level technical interviews capable of handling 100k+ concurrent
-        users using WebRTC, SSE, and distributed caching.
+      <p class="mb-4 text-justify">
+        As Co-Founder & CTO of <strong>PhobosQ</strong>, I'm architecting the next generation of 
+        enterprise intelligence: autonomous AI agents that don't just answer 
+        questions—they execute complex business logic across production databases.
       </p>
+      
+      <div class="current-focus">
+        <h3 class="focus-title">Current Focus:</h3>
+        <ul class="focus-list">
+          <li>
+            <strong>Voice Agents:</strong> Deep CRM integration (Salesforce, SAP) that actually understands context and takes action.
+          </li>
+          <li>
+            <strong>Interview Platform:</strong> AI-native technical interviewing platform for 100k+ concurrent candidates using WebRTC, SSE, and distributed caching.
+          </li>
+          <li>
+            <strong>Yazhi:</strong> The first AI platform for 90M Tamil speakers with cultural & linguistic adaptation at the model level.
+          </li>
+          <li>
+            <strong>PhobosQ AutoSEO:</strong> Autonomous agent leveraging 'Computer Use' for competitive analysis and automatic content generation.
+          </li>
+        </ul>
+      </div>
+      <span class="seo-keywords">Technologies & Impact, AI Strategy, Product Development, Team Leadership, GenAI, Enterprise SEO, LLM Architecture</span>
     </div>
   </section>
 </Layout>
 
 <style>
+  /* ... existing styles ... */
+  
+  .current-focus {
+    margin-top: 2rem;
+    background: var(--bg-secondary); /* or a subtle background */
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+
+  .focus-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .focus-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .focus-list li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.6;
+    color: var(--text-muted);
+  }
+
+  .focus-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--text);
+    font-weight: bold;
+  }
+  
+  .focus-list strong {
+    color: var(--text);
+    font-weight: 500;
+  }
+
   /* Hero Styling */
   .hero-spacing {
     padding-top: 5rem;

@@ -1,6 +1,7 @@
 :root {
   /* Ultra-minimalist Black & White Palette */
   --bg: #ffffff;
+  --bg-secondary: #fafafa;
   --text: #000000;
   --text-muted: #555555;
   --border: #e0e0e0;
@@ -36,6 +37,7 @@
 
 [data-theme="dark"] {
   --bg: #000000;
+  --bg-secondary: #0a0a0a;
   --text: #ffffff;
   --text-muted: #a0a0a0;
   --border: #333333;
