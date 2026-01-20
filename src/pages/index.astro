@@ -29,7 +29,7 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <div class="bio-text">
-      <p>
+      <p class="text-justify">
         I architect the infrastructure for autonomous enterprise intelligence.
         Operating at the convergence of advanced Machine Learning research and
         high-availability software engineering, I transition AI from stochastic,
@@ -45,7 +45,7 @@ import Layout from '../layouts/Layout.astro';
       <h2>Philosophy</h2>
     </div>
     <div class="section-content">
-      <p>
+      <p class="text-justify">
         In an industry saturated with fragile prototypes, I specialize in building
         production-grade systems. My engineering philosophy prioritizes rigorous
         testing, multi-tenancy, and fault tolerance over mere capability.
@@ -226,7 +226,7 @@ import Layout from '../layouts/Layout.astro';
       <h2>Open Source</h2>
     </div>
     <div class="section-content">
-      <p class="mb-4">
+      <p class="mb-4 text-justify">
         638 contributions in the past year, focusing on solving fragmentation
         in the AI stack.
       </p>
@@ -299,7 +299,7 @@ import Layout from '../layouts/Layout.astro';
       <h2>What's Next</h2>
     </div>
     <div class="section-content">
-      <p>
+      <p class="text-justify">
         Currently obsessed with building Voice Agents that integrate with CRMs
         and actually know what they're doing, and prototyping an AI platform
         for FAANG-level technical interviews capable of handling 100k+ concurrent
@@ -314,6 +314,13 @@ import Layout from '../layouts/Layout.astro';
   .hero-spacing {
     padding-top: 5rem;
     padding-bottom: 5rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero-spacing {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
   }
 
   .hero-title {
@@ -331,6 +338,17 @@ import Layout from '../layouts/Layout.astro';
     margin-bottom: 3rem;
   }
 
+  @media (max-width: 768px) {
+    .hero-title {
+      font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.125rem;
+      margin-bottom: 2rem;
+    }
+  }
+
   .bio-text p {
     font-size: 1.125rem;
     line-height: 1.75;
@@ -343,6 +361,13 @@ import Layout from '../layouts/Layout.astro';
     display: flex;
     gap: 1rem;
     margin-bottom: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    .social-links {
+      margin-bottom: 2rem;
+      gap: 0.75rem;
+    }
   }
 
   .social-links a {
