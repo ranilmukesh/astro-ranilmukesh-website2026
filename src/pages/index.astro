@@ -9,12 +9,7 @@ import Layout from '../layouts/Layout.astro';
       Ranil Mukesh MJ
     </h1>
     <p class="hero-subtitle">
-      Co-Founder & CTO | PhobosQ & k22.ai
-    </p>
-
-    <!-- Credentials - High Signal -->
-    <p class="hero-credentials" style="margin-top: -1.5rem; margin-bottom: 3rem; color: var(--text-muted); font-size: 1rem;">
-      Previously: NVIDIA • DeepMind
+      Co-Founder & CTO | <a href="https://phobosq.com" target="_blank" class="hero-link">PhobosQ</a> & <a href="https://k22.ai" target="_blank" class="hero-link">k22.ai</a>
     </p>
 
     <!-- Social Links Row -->
@@ -316,28 +311,28 @@ import Layout from '../layouts/Layout.astro';
       <h2>What I'm Building</h2>
     </div>
     <div class="section-content">
-      <p class="mb-4 text-justify">
+      <p class="text-justify">
         As Co-Founder & CTO of <strong>PhobosQ</strong>, I'm architecting the next generation of 
         enterprise intelligence: autonomous AI agents that don't just answer 
         questions—they execute complex business logic across production databases.
       </p>
-      
-      <div class="current-focus">
-        <h3 class="focus-title">Current Focus:</h3>
-        <ul class="focus-list">
-          <li>
-            <strong>Voice Agents:</strong> Deep CRM integration (Salesforce, SAP) that actually understands context and takes action.
-          </li>
-          <li>
-            <strong>Interview Platform:</strong> AI-native technical interviewing platform for 100k+ concurrent candidates using WebRTC, SSE, and distributed caching.
-          </li>
-          <li>
-            <strong>Yazhi:</strong> The first AI platform for 90M Tamil speakers with cultural & linguistic adaptation at the model level.
-          </li>
-          <li>
-            <strong>PhobosQ AutoSEO:</strong> Autonomous agent leveraging 'Computer Use' for competitive analysis and automatic content generation.
-          </li>
-        </ul>
+      <div class="stack-small" style="margin-top: 2rem;">
+        <div class="os-item">
+          <h3>Voice Agents</h3>
+          <p>Deep CRM integration (Salesforce, SAP) that actually understands context and takes action.</p>
+        </div>
+        <div class="os-item">
+          <h3>Interview Platform</h3>
+          <p>AI-native technical interviewing platform for 100k+ concurrent candidates using WebRTC, SSE, and distributed caching.</p>
+        </div>
+        <div class="os-item">
+          <h3>Yazhi</h3>
+          <p>The first AI platform for 90M Tamil speakers with cultural & linguistic adaptation at the model level.</p>
+        </div>
+        <div class="os-item">
+          <h3>PhobosQ AutoSEO</h3>
+          <p>Autonomous agent leveraging 'Computer Use' for competitive analysis and automatic content generation.</p>
+        </div>
       </div>
       <span class="seo-keywords">Technologies & Impact, AI Strategy, Product Development, Team Leadership, GenAI, Enterprise SEO, LLM Architecture</span>
     </div>
@@ -392,6 +387,18 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* Hero Styling */
+  .hero-link {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: all 0.2s ease;
+  }
+
+  .hero-link:hover {
+    color: #60a5fa; /* Light blue shade */
+    border-bottom-color: #60a5fa;
+  }
+
   .hero-spacing {
     padding-top: 5rem;
     padding-bottom: 5rem;
